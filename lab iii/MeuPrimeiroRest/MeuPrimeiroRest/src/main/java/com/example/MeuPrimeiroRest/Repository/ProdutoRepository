@@ -1,0 +1,7 @@
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.boot;
+
+public interface ProdutoRepository extends JpaRepository<Produto, Long> {
+    // Métodos personalizados, se necessário
+}
+
