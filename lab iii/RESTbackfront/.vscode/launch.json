@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "MeuPrimeiroRest",
+            "request": "launch",
+            "mainClass": "com.meuprimeirorest.MeuPrimeiroRest",
+            "projectName": "sbur-rest-demo"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MeuPrimeiroRest<meuprimeirorest>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.meuprimeirorest.MeuPrimeiroRest",
+            "projectName": "meuprimeirorest",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
