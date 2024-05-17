@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos</title>
+    <style>
+        /* Estilos simples para a página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .aluno {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Alunos</h1>
+    <div id="alunos"></div>
+
+    <script>
+        // Função para carregar a lista de alunos do backend
+        async function carregarAlunos() {
+            const response = await fetch('/alunos');
+            const data = await response.json();
+            const alunosDiv = document.getElementById('alunos');
+            alunosDiv.innerHTML = '';
+            data.forEach(aluno => {
+                const alunoDiv = document.createElement('div');
+                alunoDiv.className = 'aluno';
+                alunoDiv.innerHTML = `<strong>ID:</strong> ${aluno.id}, <strong>Nome:</strong> ${aluno.name}`;
+                alunosDiv.appendChild(alunoDiv);
+            });
+        }
+
+        // Carregar alunos quando a página carregar
+        window.onload = () => {
+            carregarAlunos();
+        };
+    </script>
+</body>
+</html>
